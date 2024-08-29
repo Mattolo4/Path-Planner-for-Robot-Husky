@@ -1,0 +1,16 @@
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find advrob_controller)/config/global_costmap.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find advrob_controller)/config/local_costmap.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find advrob_controller)/config/global_planner_params.yaml" command="load"/>
+
+    <param name="local_costmap/rolling_window" value="false"/>
+    <param name="local_costmap/width" value="15.0"/>
+    <param name="local_costmap/height" value="15.0"/>
+
+    <param name="base_local_planner" value="advrob_controller/AdvRobController"/> <!-- advrob_controller/AdvRobController base_local_planner/TrajectoryPlannerROS -->
+    <param name="controller_frequency" value="20.0"/>
+    <param name="planner_frequency" value="5.0"/>
+    
+  </node>
+</launch>

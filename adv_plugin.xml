@@ -1,0 +1,7 @@
+<library path="lib/libadvrob_controller">
+  <class name="advrob_controller/AdvRobController" type="advrob_controller::AdvRobController" base_class_type="nav_core::BaseLocalPlanner">
+    <description>
+      Implementation of Ass3 Controller
+    </description>
+  </class>
+</library>

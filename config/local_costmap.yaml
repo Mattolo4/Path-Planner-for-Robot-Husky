@@ -1,0 +1,29 @@
+plugins:
+    - {name: static_map,        type: "costmap_2d::StaticLayer"}
+    - {name: obstacles_laser,   type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation,         type: "costmap_2d::InflationLayer"}
+
+publish_frequency: 5.0
+
+footprint: [[ 0.4,  0.35],
+            [-0.4,  0.35],
+            [-0.4, -0.35],
+            [ 0.4, -0.35]]
+
+transform_tolerance: 0.5
+global_frame: map
+robot_base_frame: base_link_robot
+update_frequency: 5.0
+planner_patience: 15
+
+static_map:
+    map_topic: map
+    track_unknown_space: true
+
+obstacles_laser:
+    observation_sources: laser
+    laser: {sensor_frame: front_laser_link, data_type: LaserScan, clearing: true, marking: true, topic: /front_laser/scan, inf_is_valid: true}
+
+inflation:
+    inflation_radius: 2.5
+    cost_scaling_factor: 9.0
