@@ -1,4 +1,4 @@
-# Launching your path planner for Ass3
+# Launching the Path Planner Package
 
 - Launch Gazebo Simulation:
 
